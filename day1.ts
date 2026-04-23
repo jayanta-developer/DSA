@@ -83,21 +83,21 @@ const calculateUnit = (unit: number) => {
 calculateUnit(329);
 
 //get currency notes old version
-const objval:{
+const objval: {
   currency: number;
   count: number;
 }[] = [
-  { currency: 2000, count: 0 },
-  { currency: 500, count: 0 },
-  { currency: 200, count: 0 },
-  { currency: 100, count: 0 },
-  { currency: 50, count: 0 },
-  { currency: 20, count: 0 },
-  { currency: 10, count: 0 },
-  { currency: 5, count: 0 },
-  { currency: 2, count: 0 },
-  { currency: 1, count: 0 },
-];
+    { currency: 2000, count: 0 },
+    { currency: 500, count: 0 },
+    { currency: 200, count: 0 },
+    { currency: 100, count: 0 },
+    { currency: 50, count: 0 },
+    { currency: 20, count: 0 },
+    { currency: 10, count: 0 },
+    { currency: 5, count: 0 },
+    { currency: 2, count: 0 },
+    { currency: 1, count: 0 },
+  ];
 
 let currentAmount = 0;
 
@@ -132,19 +132,40 @@ console.log(getCurrency(4889));
 //get currency notes new version
 const denominations = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
 
-const getCurrency_v2=(amount:number)=>{
-  let currentAmount  = amount;
-  
-  const result = denominations.map((currency)=>{
-      const count = Math.floor(currentAmount / currency);
-      currentAmount %= currency;
-      
-      return {currency,count}
-      
+const getCurrency_v2 = (amount: number) => {
+  let currentAmount = amount;
+
+  const result = denominations.map((currency) => {
+    const count = Math.floor(currentAmount / currency);
+    currentAmount %= currency;
+
+    return { currency, count }
+
   })
-  
+
   return result;
 }
 
 
 console.log(getCurrency_v2(4889))
+
+//Revarse number
+const reverseNum = (n: number) => {
+  let rev = 0;
+  while (n > 0) {
+    let rem = n % 10;
+    rev = rev * 10 + rem
+    n = Math.floor(n / 10)
+  }
+  console.log(rev)
+}
+reverseNum(123456789)
+
+
+let val;
+
+do {
+ val = prompt("Give any number for close type 0")
+  console.log(val)
+}
+while (Number(val) !== 0)
