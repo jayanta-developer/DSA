@@ -1,26 +1,32 @@
-/// make a string revarse
+const prompt = require("prompt-sync")();
+const n = Number(prompt("Enter Number "));
 
-// const revarseString = (string) => {
-//   const inputString = string.split("");
-//   console.log(inputString);
-// };
+// for(let i = 0; i < n; i++){
+//   for(let j = 0; j < n; j++){
+//   process.stdout.write(`*`);
+// }
+// console.log();
+// }
 
-let guessNum = 0;
-let random = Math.floor(Math.random() * 20) + 1;
+// for (let i = 0; i < n; i++) {
+//   for (let j = 0; j < i+1; j++) {  
+//    process.stdout.write(String(j+1))
+//   }
+//   console.log();
+// }
+// for (let i = n; i > 0; i--) {
+//   for (let j = 0; j < i; j++) {
+//     process.stdout.write('*');
+//   }
+//   console.log();
+// }
 
-while (guessNum !== random) {
-  guessNum = Number(prompt("Guess the number between 1 - 20"));
 
-  if (isNaN(guessNum) || guessNum < 1 || guessNum > 20) {
-    console.log("Invalid input! Enter a number between 1 and 20.");
-    continue;
-  }
-
-  if (guessNum < random) {
-    console.log("Too low! Try again.");
-  } else if (guessNum > random) {
-    console.log("Too high! Try again.");
-  } else {
-    console.log("Congratulations 🎉🎉🎉");
-  }
-}
+// for (let i = 0; i < n; i++) {
+//   let ascii = 65;
+//   for (let j = 0; j < i+1; j++) {
+//    process.stdout.write(String.fromCharCode(ascii)+" ")
+//    ascii++
+//   }
+//   console.log();
+// }
