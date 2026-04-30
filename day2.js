@@ -52,4 +52,3 @@ const n = Number(prompt("Enter Number "));
 //   }
 //   console.log()
 // }
-
